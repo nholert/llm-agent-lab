@@ -1,0 +1,18 @@
+diff --git a/cat.py b/cat.py
+index f879933..aef3d95 100644
+--- a/cat.py
++++ b/cat.py
+@@ -1,11 +1,8 @@
+-'''
+-This program prints stdin to the screen.
+-'''
+ import sys
++import shutil
+ 
+ def cat(file):
+-    data = file.read()
+-    sys.stdout.buffer.write(data)
++    shutil.copyfileobj(file, sys.stdout.buffer)
+ 
+ if __name__ == "__main__":
+     if len(sys.argv) > 1:
